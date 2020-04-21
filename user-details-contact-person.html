@@ -10,21 +10,12 @@
       <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
       <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
       <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+	  <script type="text/javascript" src="va.js"></script> 
       <script type="text/javascript">
          /* page specific js */
          
-         $(document).ready(function() {
-       
-     
-				 
-         });
+         
       </script>
-      <style type="text/css">
-         /* page specific css */
-         
-
-         
-      </style>
    </head>
    <body class="live-demo au-body au-grid">
       <main class="au-grid">
@@ -41,7 +32,7 @@
 						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
 						<br />
 						<p id="mycasa-home"><a href="#">myCASA home</a></p>
-						<p><a href="dashboard-select.html">Switch profile</a></p>
+						<p><a href="#">Switch profile</a></p>
 						<p><a href="mycasa-signed-out.html">Sign out</a></p>
 						</div>
                   
@@ -61,76 +52,70 @@
 			</div>
 		</div>
          <div class="container">
-			 			<div class="col-lg-6 col-xs-12">
-			<header class="au-header" role="banner">
-				<h1 class="au-header-heading">myCASA</h1>
-				<span class="au-header-subline">Sign in or create an account to access myCASA.</span>
-				<p class="au-body"><strong>Not registered?</strong> <a href="welcome-interstitial.html">Create an account</a>.
-</p>
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="dashboard-org.html">myCASA</a></li>
+                      <li><a href="manage-users.html">Manage users</a></li>
+                    <li>Add user</li>
+                  </ul>
+               </nav>
+			 <div class="casa-section">
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Add user</h1>
+                  <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
+               </header>
+			 </div>
 
-			</header>
-
-			<form class="validateform" id="signinForm" method="get" action="profile-dashboard.html">
-
-
-
-				<label for="text-input-block">Email address</label>
-				<input class="au-text-input au-text-input--block" name="email" id="email" type="text" value="" >
-
-				<br />
-
-				<label for="text-input-block">Password</label>
-				<input class="au-text-input au-text-input--block" name="password" id="password" type="password" value="" >
-
-
-
-
-<p><a href="#">Problems signing in?</a></p>
-			<br>	
-
-			</form>
-
-			<a class="au-btn" href="dashboard-select.html">Sign in</a>
+<div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
+				
+<h2>User details</h2>
+					
 
 
+			<div class="au-form-group">
+                        <label class="au-label" for="name">User family name</label>
+                        <input type="text" class="au-text-input au-text-input--block" id="start-time"/>
+          	</div>
+					
+			<div class="au-form-group">
+                        <label class="au-label" for="name">User aviation reference number</label>
+                        <input type="text" class="au-text-input au-text-input--block" id="duration"/>
+          	</div>
+					
+					
 
-			</div>
-			
-			
-			<div class="col-lg-5 col-xs-12">
-				<div style="margin-left:1em;">
-				<br />
-				<h3>What is myCASA?</h3>
+					
 
-				<p>myCASA is an online portal where you can: </p>
 
-				  <ul>
-			  	<li>Apply for an Aviation reference number (ARN)</li>
-				<li>Access AviationWorx, CASA's online learning and registration system</li>
-				<li>Submit a Remote Pilot Licence application</li>
-				<li>Submit a Flight Crew Pilot Licence application</li>
-				<li>View your licences, certificates and accrediations</li>	  
-				<li>View and apply for renewals of Remotely Piloted Aircraft Operator's Certificates (ReOCs)</li>
-				<li>Update your contact details</li>	  
-			  </ul>
+					  
 
-				<p>More online services will be available soon through myCASA.</p>
+
+				   
+				<div class="au-form-group">
+
+				<a class="au-btn" href="confirm-user.html">Next</a>
+					
+
+
+
+
+					
 
 				</div>
-
-			</div>
-		</div>
-
-					 
-			 	   
-				   
-				   
-				   
-				   
-				   
+				               <hr />
+            <a href="arn-saved.html" class="au-btn au-btn--secondary">
+            Save and exit application
+            </a>  
 				   
             </div>
-         </div>
+			 </div>
+			 </div>
+		  </div>
+
+
           <div class="footer">
            
             <div class="footer-wrapper">
@@ -138,5 +123,17 @@
             </div>
          </div>
       </main>
+	   		  <script>
+		  $("input[name=assessed-simulator]").on("change", function () {
+        if ($(this).val() === "aircraft") {
+            $(".vh-mark").removeClass("casa-hidden");
+            $(".simulator").addClass("casa-hidden");
+        } else if ($(this).val() === "simulator") {
+            $(".vh-mark").addClass("casa-hidden");
+            $(".simulator").removeClass("casa-hidden");
+        }
+    });
+
+		  </script>	 
    </body>
 </html>
