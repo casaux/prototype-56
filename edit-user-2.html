@@ -5,12 +5,11 @@
       <title>myCASA</title>
       <meta name="viewport" content="width=device-width">
       <meta name="viewport" content="initial-scale=1">
-      <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+       <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
       <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css">
       <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
       <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
       <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
-	  <script type="text/javascript" src="va.js"></script> 
       <script type="text/javascript">
          /* page specific js */
          
@@ -56,61 +55,73 @@
                   <ul class="au-link-list au-link-list--inline">
                      <li><a href="dashboard-org.html">myCASA</a></li>
                       <li><a href="manage-users.html">Manage roles and users</a></li>
-                    <li>Change CEO</li>
+                    <li>Edit user</li>
                   </ul>
                </nav>
-			 <div class="casa-section">
-               <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Change&nbsp; CEO</h1>
-                  <a class="au-direction-link" href="javascript:history.back()">
-					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
-					</a>
+			 
+			 <div class="au-body au-page-alerts au-page-alerts--info">
+  <h3>User has been found</h3>
+</div>
+			     <div class="au-form-group">             
+			           <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">Edit User</h1>
+                           <a class="au-direction-link" href="javascript:history.back()">
+                            <span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+                            </a>
                </header>
+			 
 			 </div>
+			
 
-<div class="row">
-               	<div class="col-xs-12 col-md-12 col-lg-6">
-				
-<h2>User details</h2>
-					
+<div class="au-form-group">			 
+<div class="au-table__wrapper">
+	<section class="au-callout">					
+					<h4>User details</h4>
+<p><strong>Name:</strong> Heidi Gilmore<br>
+<strong>ARN:</strong> 1478952</p>
+					</section>
+    <table class="au-table au-table--striped">
+        <thead class="au-table__head">
+            <tr class="au-table__row">
+                <th scope="col" class="au-table__header au-table__header--width-25">Assigned roles</th>
+				<th scope="col" class="au-table__header au-table__header--width-25"></th>
+            </tr>
+        </thead>
+        <tbody class="au-table__body">
+            <tr class="au-table__row">
+                <td class="au-table__cell">Contact person</td>
+				<td class="au-table__cell"><a href="#">Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+ 
 
-
-			<div class="au-form-group">
-                        <label class="au-label" for="name">User family name</label>
-                        <input type="text" class="au-text-input au-text-input--block" id="start-time"/>
-          	</div>
-					
-			<div class="au-form-group">
-                        <label class="au-label" for="name">User aviation reference number</label>
-                        <input type="text" class="au-text-input au-text-input--block" id="duration"/>
-          	</div>
-					
-					
-
-					
-
-
-					  
-
-
-				   
-				<div class="au-form-group">
-
-				<a class="au-btn" href="select-user-role-ceo.html">Next</a>
-					
-
+                 
+									   
+				                    <div class="au-form-group">
 
 
-
+				<a class="au-btn" href="select-user-role-auth.html">Add role</a>
 					
 
 				</div>
-		
-			 </div>
-			 </div>
-		  </div>
+
+                <div class="au-form-group">
 
 
+				<a class="au-btn au-btn--secondary" href="#">Remove user</a>
+					
+
+							
+
+				</div>
+				   
+				   
+				   
+            </div>
+         </div>
           <div class="footer">
            
             <div class="footer-wrapper">
@@ -118,17 +129,5 @@
             </div>
          </div>
       </main>
-	   		  <script>
-		  $("input[name=assessed-simulator]").on("change", function () {
-        if ($(this).val() === "aircraft") {
-            $(".vh-mark").removeClass("casa-hidden");
-            $(".simulator").addClass("casa-hidden");
-        } else if ($(this).val() === "simulator") {
-            $(".vh-mark").addClass("casa-hidden");
-            $(".simulator").removeClass("casa-hidden");
-        }
-    });
-
-		  </script>	 
    </body>
 </html>

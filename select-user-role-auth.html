@@ -54,49 +54,48 @@
          <div class="container">
                <nav class="au-breadcrumbs" aria-label="breadcrumb">
                   <ul class="au-link-list au-link-list--inline">
-                     <li><a href="dashboard-org.html">myCASA</a></li>
-                      <li><a href="manage-users.html">Manage roles and users</a></li>
-                    <li>Change CEO</li>
+                     <li><a href="#">myCASA</a></li>
+                      <li><a href="manage-users-main-page-3.html">Manage roles and users</a></li>
+                    <li>Edit user</li>
                   </ul>
                </nav>
 			 <div class="casa-section">
                <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Change&nbsp; CEO</h1>
+                  <h1 class="break desktop au-header-heading">Edit user</h1>
                   <a class="au-direction-link" href="javascript:history.back()">
 					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
 					</a>
                </header>
 			 </div>
-
 <div class="row">
                	<div class="col-xs-12 col-md-12 col-lg-6">
-				
-<h2>User details</h2>
-					
-
-
-			<div class="au-form-group">
-                        <label class="au-label" for="name">User family name</label>
-                        <input type="text" class="au-text-input au-text-input--block" id="start-time"/>
-          	</div>
-					
-			<div class="au-form-group">
-                        <label class="au-label" for="name">User aviation reference number</label>
-                        <input type="text" class="au-text-input au-text-input--block" id="duration"/>
-          	</div>
-					
-					
+					<section class="au-callout">					
+					<h4>User details</h4>
+<p><strong>Name:</strong> Heidi Gilmore<br>
+<strong>ARN:</strong> 1478952</p>
+					</section>
 
 					
-
-
-					  
+					
+					<div class="au-form-group">     
+                    <fieldset class="au-fieldset">
+                        <legend class="au-fieldset__legend">
+   <h3 class="au-display-sm">Please select a role</h3>
+							<span class="au-hint-text">CEO and DAMP contact cannot be assigned here, and are required to be changed through the main Manage roles and users page.</span>
+                        </legend>
+						<br>
+ 	<div class="au-control-input au-control-input--block">
+  <input class="au-control-input__input" type="checkbox" name="contact" id="contact">
+  <label class="au-control-input__text" for="contact">Authorised representative</label>
+</div>		
 
 
 				   
 				<div class="au-form-group">
 
-				<a class="au-btn" href="select-user-role-ceo.html">Next</a>
+								<div id="navigate" "navigate2">
+			    <a href="#" class="au-btn au-btn--primary">Next</a>          
+            </div>
 					
 
 
@@ -105,7 +104,7 @@
 					
 
 				</div>
-		
+</div>
 			 </div>
 			 </div>
 		  </div>
@@ -118,17 +117,11 @@
             </div>
          </div>
       </main>
-	   		  <script>
-		  $("input[name=assessed-simulator]").on("change", function () {
-        if ($(this).val() === "aircraft") {
-            $(".vh-mark").removeClass("casa-hidden");
-            $(".simulator").addClass("casa-hidden");
-        } else if ($(this).val() === "simulator") {
-            $(".vh-mark").addClass("casa-hidden");
-            $(".simulator").removeClass("casa-hidden");
-        }
-    });
-
-		  </script>	 
+ <script>
+        $("#navigate a"). click(function(){
+				var radioValue = $("input[name='role-choice']:checked"). val();
+				window.location.href=radioValue+".html";
+			 }); 
+       </script>
    </body>
 </html>
