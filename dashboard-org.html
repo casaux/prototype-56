@@ -17,53 +17,71 @@
         /* initiate jQuery */
         $(document).ready(function() {
 
+            
+            if(window.location.hash) {
+                
+                
+                
+               $(" .load").css("opacity",1);
+                    $(" .load").css("display","block");
+                $(".casa-loading-message").css("display","none");
+                
+ 
+
+            } else {
 
 
-          $("#casa-load").css("opacity",0);
-          /* start timer after 1000 milliseconds
 
-              this
+                  $("#casa-load").css("opacity",0);
+                  /* start timer after 1000 milliseconds
 
-
-
-           */
-
-           /* start loading message... */
-
-           $("#casa-load").animate({'opacity':'1'},500, function() {
-
-           setInterval(function(){
-
-                $(".casa-loading-message span").html("Checking licences and authorisations...");
+                      this
 
 
+
+                   */
+
+                   /* start loading message... */
+
+                   $("#casa-load").animate({'opacity':'1'},500, function() {
 
                    setInterval(function(){
-                    $(".casa-loading-message").animate({'opacity':'0'},500, function() {
 
-                            $(".casa-loading-message").css("display","none");
-
-                              setInterval(function(){
-
-                               $(".load").css("display","block");
-                               $(".load").animate({'opacity':'1'},500)
-                             },0);
+                        $(".casa-loading-message span").html("Checking licences and authorisations...");
 
 
 
-                    });
+                           setInterval(function(){
+                            $(".casa-loading-message").animate({'opacity':'0'},500, function() {
+
+                                    $(".casa-loading-message").css("display","none");
+
+                                      setInterval(function(){
+
+                                       $(".load").css("display","block");
+                                       $(".load").animate({'opacity':'1'},500)
+                                     },0);
 
 
 
+                            });
+
+
+
+
+                          },10000);
 
                   },10000);
 
-          },10000);
+                  });
 
-          });
+            // Fragment doesn't exist
+        }
 
-
-        });
+                });
+            
+            
+            
     </script>
     <style type="text/css">
         /* page specific css */
@@ -120,7 +138,7 @@
                     <div class="casa-profile-link col-lg-6 col-md-12 col-xs-12 col-lg-12-align-right">
                         <ul>
                             <li><a href="#">View profile</a></li>
-                            <li><a href="#">Switch profile</a></li>
+                            <li><a href="dashboard-select.html">Switch profile</a></li>
                         </ul>
                     </div>
 
