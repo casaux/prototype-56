@@ -14,18 +14,91 @@
     <script type="text/javascript">
         /* page specific js */
 
+        /* initiate jQuery */
         $(document).ready(function() {
 
-        });
+
+            if(window.location.hash) {
+
+
+
+               $(" .load").css("opacity",1);
+                    $(" .load").css("display","block");
+                $(".casa-loading-message").css("display","none");
+
+
+
+            } else {
+
+
+
+                  $("#casa-load").css("opacity",0);
+                  /* start timer after 1000 milliseconds
+
+                      this
+
+
+
+                   */
+
+                   /* start loading message... */
+
+                   $("#casa-load").animate({'opacity':'1'},500, function() {
+
+                   setInterval(function(){
+
+                        $(".casa-loading-message span").html("Checking licences and authorisations...");
+
+
+
+                           setInterval(function(){
+                            $(".casa-loading-message").animate({'opacity':'0'},500, function() {
+
+                                    $(".casa-loading-message").css("display","none");
+
+                                      setInterval(function(){
+
+                                       $(".load").css("display","block");
+                                       $(".load").animate({'opacity':'1'},500)
+                                     },0);
+
+
+
+                            });
+
+
+
+
+                          },10000);
+
+                  },10000);
+
+                  });
+
+            // Fragment doesn't exist
+        }
+
+                });
+
+
+
     </script>
     <style type="text/css">
         /* page specific css */
+
+        /* this hides all elements with class "load" */
+        .load{opacity:0;display:none;}
+
+        .casa-loading-message{margin-top:-36px;margin-bottom:36px;}
+
+        .casa-loading-message img, .casa-loading-message span{display:inline-block;height:24px;overflow: hidden;}
+
     </style>
 </head>
 
 <body class="live-demo au-body au-grid casa-dashboard">
     <main class="au-grid">
-        <div class="header">
+        <div style="border-bottom: 4pt solid black" class="header">
             <div class="container">
                 <div class="row">
                     <div class="logo au-body au-body--dark">
@@ -44,17 +117,8 @@
             </div>
         </div>
         <div class="body">
-            <div class="banner">
-                <div class=container>
-                    <div class="row">
-                        <div class="col-md-12">
-                            This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
+            
+            <div class="container" id="casa-load">
 
                 <div class="row casa-profile casa-profile-organisation">
                     <div class="col-lg-6 col-md-12 col-xs-12">
@@ -64,8 +128,8 @@
                     </div>
                     <div class="casa-profile-link col-lg-6 col-md-12 col-xs-12 col-lg-12-align-right">
                         <ul>
-                            <li><a href="#">View profile</a></li>
-                            <li><a href="#">Switch profile</a></li>
+                            <li><a href="#">View/Edit profile</a></li>
+                            <li><a href="dashboard-select.html">Switch profile</a></li>
                         </ul>
                     </div>
 
@@ -75,6 +139,9 @@
                     <h1 class="break desktop au-header-heading au-display-xl">Welcome to myCASA</h1>
                 </header>
 
+                <div class="casa-loading-message">
+                    <span>Loading profile information...</span> <img src="bars.gif" width="30" height="24"/>
+                </div>
 
 
                 <!-- row 1 - AOC
@@ -93,7 +160,7 @@
                 </div>
 -->
                 <!-- row 2 - ReOC -->
-                <div class="casa-dashboard-row row">
+                <div class="casa-dashboard-row row load">
                     <div class="col-lg-12 col-md-12 col-xs-12">
                         <h2 class="au-display-lg">Remotely piloted aircraft operator's certificate
  (<abbr title="Remotely piloted aircraft operator's certificate
@@ -111,25 +178,15 @@
 
                 <div class="casa-dashboard-row row">
                     <div class="col-lg-12 col-md-12 col-xs-12">
-                        <h2 class="au-display-lg">Applications and notifications</h2>
+                        <h2 class="au-display-lg">Role and user management</h2>
                     </div>
 
-                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
-                        <h3 class="au-display-sm"><a href="#">Flight crew licence application payment</a></h3>
-
-                        <p>Pay for a flight crew licence application</p>
-                    </div>
-                    <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
-                        <h3 class="au-display-sm"><a href="#">Remote pilot licence (<abbr title="Remote pilot licence">RePL</abbr>) application</a></h3>
-
-                        <p>Submit an application for a remote pilot licence</p>
-                    </div>
                     <div class="casa-dashboard-item col-lg-6 col-md-6 col-xs-12">
                         <h3 class="au-display-sm"><a href="manage-users-main-page-3.html">Roles and users</a></h3>
 
                         <p>Manage roles and users</p>
                     </div>
-                    
+
 
 
                 </div>
