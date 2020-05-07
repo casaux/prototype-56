@@ -9,3 +9,11 @@
     height:25px !important;
 
 }
+.casa-profile-organisation {
+    border-bottom: 3px solid #fc7315 !important;
+;
+}
+
+.au-body .au-form-group  p{
+  max-width:100% !important;
+}
