@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>myCASA</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1">
+       <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css"><link rel="stylesheet" href="style.css">
+      <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+	  <script type="text/javascript" src="va.js"></script>       <script type="text/javascript">
+         /* page specific js */
+
+
+      </script>
+   </head>
+   <body class="live-demo au-body au-grid">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
+                  </div>
+                 <div class="casa-sign-out">
+
+                        <div class="au-body au-body--dark">
+                            <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a>
+                        </div>
+
+                    </div>
+               </div></div>
+            </div>
+         </div>
+         <div class="body">
+			<div class="banner">
+				<div class=container>
+					<div class="row">
+					 <div class="col-md-12">
+				This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+				</div>
+				</div>
+			</div>
+		</div>
+         <div class="container">
+               <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                  <ul class="au-link-list au-link-list--inline">
+                     <li><a href="dashboard-org.html">myCASA</a></li>
+                     <li>VH mark reservation</li>
+                  </ul>
+               </nav>
+			 <div class="casa-section">
+               <header class="au-header" role="banner">
+                  <h1 class="break desktop au-header-heading">VH mark reservation</h1>
+                  <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
+               </header>
+			 </div>
+<div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
+                    <h2>Aircraft details</h2>
+                    
+					<section class="au-callout">					
+					<h4>You have selected</h4>
+<span style="font-size: 2rem">VH-FFA</span>
+					</section>
+
+					
+					
+					<div class="au-form-group">     
+                    <fieldset class="au-fieldset">
+                        <legend class="au-fieldset__legend">
+                            <h3 class="au-display-sm">Is this VH mark for an existing aircraft?</h3>
+                        </legend>
+
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="existsornot"
+                                       id="assessed-aircraft" value="existing-aircraft">
+                                <label class="au-control-input__text" for="assessed-aircraft">Yes</label>
+                        </div>
+                        
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="existsornot"
+                                       id="existsornot" value="non-existing-aircraft">
+                                <label class="au-control-input__text" for="existsornot">No</label>
+                        </div>
+
+
+                        
+                    </fieldset>
+                    </div>  
+					
+					
+
+				
+				
+				<div class="casa-section exists casa-hidden">
+			<div class="au-form-group">
+                        <label class="au-label" for="name">Manufacturer</label>
+                        <input type="text" class="au-text-input au-text-input--block" id="manufacturer"/>
+          	</div>
+					
+			<div class="au-form-group">
+                        <label class="au-label" for="name">Model</label>
+                        <input type="text" class="au-text-input au-text-input--block" id="model"/>
+          	</div>
+                    
+            			<div class="au-form-group">
+                        <label class="au-label" for="name">Serial number</label>
+                        <input type="text" class="au-text-input au-text-input--block" id="model"/>
+          	</div>        
+				</div>
+				
+				<div class="casa-section doesnt-exist casa-hidden">
+					
+            <div class="au-form-group">
+                        <label class="au-label" for="additional">Additional information</label>
+                          <span class="au-hint-text">Please provide an explination as to why the mark is required below.</span>
+                        <textarea class="au-text-input au-text-input--block" id="additional"></textarea>
+          	</div>
+					</div>
+
+
+				   
+				<div class="au-form-group">
+
+								<div>
+			    <a href="application-summary-vh-mark.html" class="au-btn au-btn--primary">Next</a>   
+                                    
+                  
+            </div>
+					
+
+
+
+
+					
+
+				</div>
+				               <hr />
+            <a href="../flight-review-v2/arn-saved.html" class="au-btn au-btn--secondary">
+            Save and exit application
+            </a>  
+				   
+            </div>
+			 </div>
+			 </div>
+		  </div>
+
+
+          <div class="footer">
+           
+            <div class="footer-wrapper">
+               <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+		  <script>
+		  $("input[name=existsornot]").on("change", function () {
+        if ($(this).val() === "existing-aircraft") {
+            $(".exists").removeClass("casa-hidden");
+            $(".doesnt-exist").addClass("casa-hidden");
+        } else if ($(this).val() === "non-existing-aircraft") {
+            $(".exists").addClass("casa-hidden");
+            $(".doesnt-exist").removeClass("casa-hidden");
+        }
+    });
+
+
+
+		  </script>	  
+   </body>
+</html>
