@@ -1,0 +1,11 @@
+
+.banner {
+    height:0px;border-bottom: 4pt solid black;overflow: hidden !important;padding:0 !important;
+}
+
+.footer .banner {
+    border: none;
+    padding:10px !important;
+    height:25px !important;
+
+}
